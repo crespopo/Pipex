@@ -6,9 +6,10 @@
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:53:36 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/04/11 12:45:25 by dacrespo         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:17:27 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -56,9 +57,7 @@ int	main(void)
 	else if (pid > 0)
 		printf("Hola, yo soy el Padre:%d\n", getpid());
 	else
-		printf("No soy familia de nadie\n");
 	return (0);
-}
 */
 
 /*
