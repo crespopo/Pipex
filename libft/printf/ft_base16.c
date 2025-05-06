@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_base16.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/04/25 13:17:02 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/04/26 13:08:44 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "ft_printf.h"
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
+int	ft_base16(unsigned long nb, char *hex_digits)
+{
+	int	count;
 
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	count = 0;
+	if (nb > 15)
+	{
+		count = count + ft_base16 (nb / 16, hex_digits);
+		count = count + ft_base16 (nb % 16, hex_digits);
+	}
+	else
+		count = count + printf_char(hex_digits[nb]);
+	if (count < 0)
+		return (-1);
+	return (count);
+}

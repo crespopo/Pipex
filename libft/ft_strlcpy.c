@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/01/20 14:19:41 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/03/09 18:43:09 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
+// Copy a source string to a destination string with a maximum length.
+// Prevents memory overflows.
+int	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
-
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	while (i < dstsize -1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   printf_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/04/18 14:46:35 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/04/25 16:42:33 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "ft_printf.h"
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
+int	printf_hex(unsigned int nb, int type)
+{
+	char	*hex_digits;
 
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	if (type == 'x')
+		hex_digits = "0123456789abcdef";
+	else
+		hex_digits = "0123456789ABCDEF";
+	return (ft_base16(nb, hex_digits));
+}

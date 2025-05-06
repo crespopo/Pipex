@@ -1,47 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/02/27 13:00:13 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/03/03 17:27:48 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	int	i;
 
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}

@@ -1,47 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/01/31 01:43:53 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/02/04 16:17:25 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
+// Assign a value within a memory block
+// Returns the initial pointer, now referencing the altered memory.
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*s;
+	size_t			i;
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
-
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	i = 0;
+	s = b;
+	while (i < len)
+	{
+		s[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
+}

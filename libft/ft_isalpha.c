@@ -1,47 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/01/20 14:19:00 by dacrespo          #+#    #+#             */
+/*   Updated: 2025/05/06 16:18:57 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
+// Checks if a 'c' is an alphabetic character (letter (a-z, A-Z)
 
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
+int	ft_isalpha(int str)
+{
+	if (str < 'A' || str > 'Z' && str < 'a' || str > 'z')
+		return (0);
+	return (1);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#endif

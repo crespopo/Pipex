@@ -1,47 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 09:00:19 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 14:30:12 by dacrespo         ###   ########.fr       */
+/*   Created: 2024/02/14 12:56:09 by dacrespo          #+#    #+#             */
+/*   Updated: 2024/02/15 15:54:01 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
+// It creates a duplicate of an string by allocating memory for a new string
+// and coping the content of the original string into it.
 
-//libft (ft_printf,ft_printf, gnl)
-# include "libft/libft.h"
+char	*ft_strdup(const char *s1)
+{
+	size_t	len;
+	char	*new_str;
 
-//perror
-# include <stdio.h>
-
-//malloc, free, exit, rand
-# include <stdlib.h>
-
-//fork, pipe, dup2, read, close
-# include <unistd.h>
-
-//wait
-# include <sys/wait.h>
-
-//strerror
-# include <string.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	len = ft_strlen(s1);
+	new_str = (char *) malloc(len +1);
+	if (new_str == NULL)
+		return (NULL);
+	ft_strlcpy (new_str, s1, len + 1);
+	return (new_str);
+}
