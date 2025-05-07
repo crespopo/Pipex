@@ -6,11 +6,12 @@
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:55:52 by dacrespo          #+#    #+#             */
-/*   Updated: 2024/04/26 12:00:02 by dacrespo         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:16:00 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 int	ft_printf(char const *str, ...)
 {

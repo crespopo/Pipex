@@ -6,7 +6,7 @@
 /*   By: dacrespo <dacrespo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:19:00 by dacrespo          #+#    #+#             */
-/*   Updated: 2025/05/06 16:18:57 by dacrespo         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:12:05 by dacrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	ft_isalpha(int str)
 {
-	if (str < 'A' || str > 'Z' && str < 'a' || str > 'z')
+	if (str < 'A' || (str > 'Z' && str < 'a') || str > 'z')
 		return (0);
 	return (1);
 }
